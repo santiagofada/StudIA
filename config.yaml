@@ -1,0 +1,46 @@
+# ======================================================
+# CONFIGURACIÓN GENERAL
+# ======================================================
+minutes_per_block: 30               # Duración de cada bloque en minutos
+base_date: "2025-05-05"             # Lunes de la semana que se va a planificar
+
+
+# ======================================================
+# PARÁMETROS DE PREFERENCIAS
+# ======================================================
+base_pref: 2                        # Puntaje por defecto si un bloque no está en preferencias.csv
+
+
+# ======================================================
+# RECOMPENSAS Y PENALIZACIONES DE TAREAS
+# ======================================================
+task_complete_reward: 200           # Recompensa si una tarea se completa por completo
+task_missing_penalty: -100          # Penalización por cada bloque faltante de una tarea
+deadline_late_penalty: -100         # Penalización por cada bloque asignado después del deadline
+task_balance_penalty_per_extra_block: -10  # Penalización por concentrar muchos bloques de una tarea en un solo día
+
+
+# ======================================================
+# DISPONIBILIDAD Y CONFLICTOS
+# ======================================================
+out_of_bounds_penalty: -30         # Penalización por usar bloques fuera del horario disponible
+conflict_penalty: -100             # Penalización fuerte por conflicto con eventos fijos
+
+
+# ======================================================
+# REGLAS DE TRABAJO OBLIGATORIO (actividad especial "Trabajo")
+# ======================================================
+work_required_blocks_per_day: 15            # Mínimo diario de bloques de "Trabajo" (8 × 30min = 4h)
+work_penalty_per_missing_block: -50       # Penalización por cada bloque faltante del mínimo diario
+max_work_blocks_per_day: 10                # Máximo aceptado de bloques diarios de "Trabajo" (evita sobrecarga)
+work_penalty_per_extra_block: -50          # Penalización por cada bloque de más
+wrong_day_penalty: -100                     # penaliza si Trabajo Lunes no ocurre en lunes, etc.
+
+
+# ======================================================
+# CALIDAD DE VIDA Y DISTRIBUCIÓN
+# ======================================================
+fragmentation_penalty: -10         # Penaliza cambios frecuentes de tarea entre bloques contiguos
+contiguity_bonus: 10               # Bonificación por bloques contiguos de una misma tarea
+weekend_work_penalty_per_block: -50  # Penalización por trabajar en fin de semana
+night_work_penalty: -30            # Penalización por trabajar en bloques de madrugada (ej. 00:00–06:00)
